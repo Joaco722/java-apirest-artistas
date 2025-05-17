@@ -12,6 +12,8 @@ Este proyecto es una API REST desarrollada con **Spring Boot** que permite gesti
 - **Docker** y **Docker Compose**
 - **TablePlus** (como cliente visual para base de datos, opcional)
 - **Maven** (gestor de dependencias)
+  - DotEnv
+  - Lombok
 
 ## 📦 Estructura del proyecto
 
@@ -43,7 +45,8 @@ src/
 
 | Método | Ruta                   | Descripción                  |
 | ------ | ---------------------- | ---------------------------- |
-| GET    | `/artistas/traertodos` | Listar todos los artistas    |
+| GET    | `/artistas/`           | Listar todos los artistas    |
+| GET    | `/artistas/{id}`       | Listar un solo artista/banda |
 | POST   | `/artistas`            | Crear un nuevo artista/banda |
 | DELETE | `/artistas/{id}`       | Eliminar un artista por ID   |
 | PUT    | `/artistas/{id}`       | Actualizar un artista por ID |
