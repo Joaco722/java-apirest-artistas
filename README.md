@@ -16,16 +16,27 @@ Este proyecto es una API REST desarrollada con **Spring Boot** que permite gesti
 ## 📦 Estructura del proyecto
 
 src/
+
 └── main/
+
 ├── java/
+
 │ └── com.tecjocs.apirest.apirest/
+
 │ ├── Controllers/
+
 │ │ └── ArtistaBandaController.java
+
 │ ├── Entities/
+
 │ │ └── ArtistaBanda.java
+
 │ └── Repositories/
+
 │ └── ArtistaBandaRepository.java
+
 └── resources/
+
 └── application.properties
 
 ## 📡 Endpoints disponibles
