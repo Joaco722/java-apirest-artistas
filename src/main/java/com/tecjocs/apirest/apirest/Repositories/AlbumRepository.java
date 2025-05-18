@@ -8,6 +8,7 @@ import com.tecjocs.apirest.apirest.Entities.Album;
 
 public interface AlbumRepository extends JpaRepository<Album,Long> {
 
-    List<Album> findByArtistaBandaId(Long artistaId);
+    List<Album> findByArtistaId(Long id);
+
 
 }

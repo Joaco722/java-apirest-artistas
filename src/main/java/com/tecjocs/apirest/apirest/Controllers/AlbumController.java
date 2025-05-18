@@ -75,7 +75,7 @@ public class AlbumController {
 
     @GetMapping("/por-artista/{artistaId}")
     public ResponseEntity<List<AlbumDTO>> obtenerAlbumsPorArtista(@PathVariable Long artistaId) {
-    List<Album> albums = albumRepository.findByArtistaBandaId(artistaId);
+    List<Album> albums = albumRepository.findByArtistaId(artistaId);
     List<AlbumDTO> albumDTOs = albums.stream()
         .map(AlbumMapper::toDTO)
         .collect(Collectors.toList());
