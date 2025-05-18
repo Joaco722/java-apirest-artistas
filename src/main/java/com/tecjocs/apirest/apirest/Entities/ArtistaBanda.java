@@ -2,6 +2,8 @@ package com.tecjocs.apirest.apirest.Entities;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,10 +18,10 @@ public class ArtistaBanda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private String tipo;
-    private String paísOrigen;
-    private String descripción;
+    @Enumerated(EnumType.STRING)
+    private TipoArtista tipo;
+    private String paisOrigen;
+    private String descripcion;
     private String imagenUrl;
-
 
 }
