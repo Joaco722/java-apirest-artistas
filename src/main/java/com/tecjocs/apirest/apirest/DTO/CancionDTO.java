@@ -9,4 +9,5 @@ public class CancionDTO {
     private String nombre;
     private String duracion;
     private Integer trackNumber;
+    private Long albumId;
 }

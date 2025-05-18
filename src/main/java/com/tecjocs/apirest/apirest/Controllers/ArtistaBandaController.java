@@ -41,7 +41,7 @@ public class ArtistaBandaController {
     @GetMapping("/{id}")
     public ResponseEntity<ArtistaBandaDTO> obtenerPorId(@PathVariable Long id) {
         ArtistaBanda artista = artistaBandaRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Artista no encontrado"));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Artista de id: " +id+" no encontrado"));
         return ResponseEntity.ok(ArtistaBandaMapper.toDTO(artista));
     }
 
@@ -55,7 +55,7 @@ public class ArtistaBandaController {
     @PutMapping("/{id}")
     public ResponseEntity<ArtistaBandaDTO> actualizar(@PathVariable Long id, @RequestBody ArtistaBandaDTO dto) {
         ArtistaBanda existente = artistaBandaRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Artista no encontrado"));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Artista de id: " +id+" no encontrado"));
 
         existente.setNombre(dto.getNombre());
         existente.setTipo(TipoArtista.valueOf(dto.getTipo()));
@@ -70,7 +70,7 @@ public class ArtistaBandaController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> borrar(@PathVariable Long id) {
         ArtistaBanda artista = artistaBandaRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Artista no encontrado"));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Artista de id: " +id+" no encontrado"));
         artistaBandaRepository.delete(artista);
         return ResponseEntity.ok("Artista eliminado correctamente");
     }
